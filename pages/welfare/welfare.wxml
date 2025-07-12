@@ -1,0 +1,91 @@
+<!-- pages/welfare/welfare.wxml -->
+<view class="container">
+  <!-- 用户状态 -->
+  <view class="user-status">
+    <view class="status-item">
+      <text class="label">今日剩余次数</text>
+      <text class="value">{{totalCount}}</text>
+    </view>
+    <view class="status-item">
+      <text class="label">累计获得次数</text>
+      <text class="value">{{totalEarned}}</text>
+    </view>
+  </view>
+
+  <!-- 任务列表 -->
+  <view class="task-list">
+    <view class="section-title">每日任务</view>
+    
+    <!-- 观看广告任务 -->
+    <view class="task-item">
+      <view class="task-info">
+        <view class="task-name">观看广告</view>
+        <view class="task-desc">完整观看广告视频可获得3次免费机会</view>
+      </view>
+      <button 
+        class="task-btn {{adLoaded ? '' : 'disabled'}}" 
+        bindtap="watchAd"
+        disabled="{{!adLoaded}}"
+      >
+        去观看
+      </button>
+    </view>
+
+    <!-- 分享任务 -->
+    <view class="task-item">
+      <view class="task-info">
+        <view class="task-name">分享给好友</view>
+        <view class="task-desc">每邀请1位好友使用可获得2次机会</view>
+      </view>
+      <button 
+        class="task-btn share-btn" 
+        open-type="share"
+      >
+        去分享
+      </button>
+    </view>
+
+    <!-- 签到任务 -->
+    <view class="task-item">
+      <view class="task-info">
+        <view class="task-name">每日签到</view>
+        <view class="task-desc">每日首次使用赠送1次免费机会</view>
+      </view>
+      <button 
+        class="task-btn {{hasSignedIn ? 'disabled' : ''}}" 
+        bindtap="signIn"
+        disabled="{{hasSignedIn}}"
+      >
+        {{hasSignedIn ? '已签到' : '签到'}}
+      </button>
+    </view>
+  </view>
+
+  <!-- 使用说明 -->
+  <view class="instructions">
+    <view class="section-title">使用说明</view>
+    <view class="instruction-list">
+      <view class="instruction-item">1. 每日自动重置3次免费使用机会</view>
+      <view class="instruction-item">2. 观看广告可获得额外3次机会</view>
+      <view class="instruction-item">3. 邀请好友可获得额外2次机会</view>
+      <view class="instruction-item">4. 每日签到可获得额外1次机会</view>
+    </view>
+  </view>
+
+  <!-- 广告区域 -->
+  <view class="ad-container">
+    <ad unit-id="adunit-id" ad-type="banner"></ad>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="bottom-tips">
+    <text class="tip-text">观看广告是获得免费次数最快的方式</text>
+    <button 
+      class="watch-ad-btn" 
+      bindtap="watchAd"
+      disabled="{{!adLoaded}}"
+    >
+      立即观看
+    </button>
+  </view>
+</view>

@@ -1,0 +1,81 @@
+/* pages/result/result.wxss */
+.container {
+  min-height: 100vh;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+}
+
+.header {
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.content {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.result-text {
+  font-size: 30rpx;
+  line-height: 1.6;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+
+.btn {
+  width: 48%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  border-radius: 40rpx;
+  margin: 0;
+}
+
+.copy-btn {
+  background-color: #1296db;
+  color: #fff;
+}
+
+.share-btn {
+  background-color: #07c160;
+  color: #fff;
+}
+
+.ad-container {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+/* 按钮点击效果 */
+.btn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}

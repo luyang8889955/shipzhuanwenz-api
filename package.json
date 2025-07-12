@@ -1,0 +1,28 @@
+{
+  "name": "shipzhuanwenz",
+  "version": "1.0.0",
+  "description": "视频转文字助手 - 支持Vercel部署",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon --watch server.js server.js",
+    "debug": "DEBUG=express:* npm run dev",
+    "vercel-build": "echo 'Vercel build completed'"
+  },
+  "keywords": ["miniprogram", "vercel", "api"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

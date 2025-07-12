@@ -1,0 +1,17 @@
+{
+  "name": "videoToText",
+  "version": "1.0.0",
+  "description": "视频转文字云函数",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "^2.6.1",
+    "tencentcloud-sdk-nodejs": "^4.0.448",
+    "ffmpeg-static": "^5.1.0",
+    "fluent-ffmpeg": "latest"
+  }
+}

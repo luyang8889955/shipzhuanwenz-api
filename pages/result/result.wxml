@@ -1,0 +1,24 @@
+<!--pages/result/result.wxml-->
+<view class="container">
+  <!-- 标题 -->
+  <view class="header">
+    <text class="title">转换结果</text>
+    <text class="subtitle">视频内容文字版</text>
+  </view>
+
+  <!-- 内容区域 -->
+  <scroll-view class="content" scroll-y>
+    <text class="result-text">{{textContent}}</text>
+  </scroll-view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons">
+    <button class="btn copy-btn" bindtap="copyText">复制文字</button>
+    <button class="btn share-btn" bindtap="shareResult">分享结果</button>
+  </view>
+
+  <!-- 广告区域 -->
+  <view class="ad-container">
+    <ad unit-id="adunit-id" ad-type="banner"></ad>
+  </view>
+</view>

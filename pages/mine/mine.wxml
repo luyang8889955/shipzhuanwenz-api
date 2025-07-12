@@ -1,0 +1,55 @@
+<!-- pages/mine/mine.wxml -->
+<view class="container">
+  <!-- 用户信息区域 -->
+  <view class="user-info">
+    <button 
+      class="avatar-wrapper"
+      open-type="chooseAvatar"
+      bind:chooseavatar="onChooseAvatar"
+    >
+      <image class="avatar" src="{{avatarUrl || '/images/default-avatar.png'}}"></image>
+    </button>
+    <view class="user-detail">
+      <input
+        type="nickname"
+        class="nickname"
+        placeholder="请输入昵称"
+        value="{{nickname}}"
+        bind:change="onNicknameChange"
+      />
+      <view class="user-stats">
+        <text class="coins">金币：{{coins}}</text>
+        <text class="usage">今日剩余：{{dailyLimit - usedCount}}次</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="feature-list">
+    <view class="feature-item" bindtap="handleShare">
+      <image class="feature-icon" src="/images/share.png"></image>
+      <text class="feature-text">分享给好友</text>
+      <text class="feature-desc">分享好友可获得额外次数</text>
+    </view>
+    <view class="feature-item" bindtap="watchAd">
+      <image class="feature-icon" src="/images/video.png"></image>
+      <text class="feature-text">观看广告</text>
+      <text class="feature-desc">观看广告获得更多次数</text>
+    </view>
+    <view class="feature-item" bindtap="showFeedback">
+      <image class="feature-icon" src="/images/feedback.png"></image>
+      <text class="feature-text">意见反馈</text>
+      <text class="feature-desc">帮助我们改进产品</text>
+    </view>
+    <view class="feature-item" bindtap="showAbout">
+      <image class="feature-icon" src="/images/about.png"></image>
+      <text class="feature-text">关于我们</text>
+      <text class="feature-desc">了解更多信息</text>
+    </view>
+  </view>
+
+  <!-- 广告区域 -->
+  <view class="ad-container">
+    <ad unit-id="adunit-id" ad-type="banner"></ad>
+  </view>
+</view>

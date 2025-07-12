@@ -1,0 +1,106 @@
+<!-- pages/index/index.wxml -->
+<view class="container">
+  <!-- 顶部状态栏 -->
+  <view class="status-bar">
+    <view class="status-item">
+      <text class="label">今日剩余次数：</text>
+      <text class="value">{{dailyLimit - usedCount}}</text>
+    </view>
+    <view class="status-item">
+      <text class="label">金币：</text>
+      <text class="value">{{coins}}</text>
+    </view>
+  </view>
+
+  <!-- 主要内容区 -->
+  <view class="main-content">
+    <view class="title">视频转文字</view>
+    <view class="subtitle">支持抖音/快手/B站等平台视频</view>
+
+    <!-- 输入区域 -->
+    <view class="input-area">
+      <textarea 
+        class="link-input" 
+        placeholder="请粘贴视频链接" 
+        value="{{inputLink}}"
+        bindinput="onInputLink"
+        disabled="{{processing}}"
+      ></textarea>
+      <button 
+        class="paste-btn" 
+        bindtap="handlePaste"
+        disabled="{{processing}}"
+      >粘贴</button>
+    </view>
+
+    <!-- 操作按钮 -->
+    <button 
+      class="process-btn {{processing ? 'processing' : ''}}" 
+      bindtap="handleVideo"
+      disabled="{{processing}}"
+    >
+      {{processing ? '处理中...' : '开始转换'}}
+    </button>
+
+    <!-- 支持的平台提示 -->
+    <view class="platform-tips">
+      <view class="tips-title">支持的平台：</view>
+      <view class="platform-list">
+        <text class="platform-item">抖音</text>
+        <text class="platform-item">快手</text>
+        <text class="platform-item">B站</text>
+        <text class="platform-item">腾讯视频</text>
+        <text class="platform-item">微博视频</text>
+      </view>
+    </view>
+
+    <!-- 使用说明 -->
+    <view class="instructions">
+      <view class="instruction-item">1. 复制视频分享链接</view>
+      <view class="instruction-item">2. 粘贴到输入框</view>
+      <view class="instruction-item">3. 点击开始转换</view>
+      <view class="instruction-item">4. 等待处理完成</view>
+    </view>
+  </view>
+
+  <!-- 广告区域 -->
+  <view class="ad-container">
+    <ad unit-id="adunit-id" ad-type="banner"></ad>
+  </view>
+
+  <!-- 底部提示 -->
+  <view class="bottom-tips">
+    <text class="tip-text">观看广告可获得更多次数和金币奖励</text>
+    <button 
+      class="watch-ad-btn" 
+      bindtap="watchAd"
+      disabled="{{!adLoaded}}"
+    >
+      观看广告
+    </button>
+
+    <!-- 分享按钮 -->
+    <button 
+      class="share-btn" 
+      open-type="share"
+    >
+      分享给好友
+    </button>
+  </view>
+
+  <!-- 返回顶部按钮 -->
+  <view 
+    class="back-to-top {{showBackTop ? 'show' : ''}}" 
+    bindtap="backToTop"
+  >
+    <text class="back-to-top-icon">↑</text>
+  </view>
+
+  <!-- 处理中遮罩 -->
+  <view class="loading-mask" wx:if="{{processing}}">
+    <view class="loading-content">
+      <view class="loading-icon"></view>
+      <text class="loading-text">处理中...</text>
+    </view>
+  </view>
+</view>

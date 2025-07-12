@@ -1,0 +1,152 @@
+/* pages/tools/tools.wxss */
+.container {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding: 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 工具列表 */
+.tools-list {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  position: relative;
+}
+
+.tool-item:last-child {
+  border-bottom: none;
+}
+
+.tool-item:active {
+  background-color: #f9f9f9;
+}
+
+.tool-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: #f0f0f0;
+  border-radius: 16rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+
+.tool-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-name {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.tool-desc {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.tool-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: 20rpx;
+}
+
+.remain-count {
+  font-size: 24rpx;
+  color: #1296db;
+  margin-bottom: 8rpx;
+}
+
+.status-tag {
+  font-size: 24rpx;
+  color: #ff9500;
+  background-color: rgba(255, 149, 0, 0.1);
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+}
+
+/* 即将推出的工具样式 */
+.coming-soon {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.coming-soon .tool-icon {
+  background-color: #f8f8f8;
+}
+
+/* 广告容器 */
+.ad-container {
+  width: 100%;
+  margin: 20rpx 0;
+}
+
+/* 底部提示 */
+.bottom-tips {
+  margin-top: auto;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  text-align: center;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.tip-text {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.watch-ad-btn {
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #ffd700;
+  color: #333;
+  font-size: 30rpx;
+  font-weight: bold;
+  border-radius: 40rpx;
+  margin: 0 auto;
+}
+
+.watch-ad-btn[disabled] {
+  background-color: #f0f0f0;
+  color: #999;
+}
+
+/* 工具图标动画 */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tool-item:not(.coming-soon):active .tool-icon {
+  animation: pulse 0.3s ease-in-out;
+}

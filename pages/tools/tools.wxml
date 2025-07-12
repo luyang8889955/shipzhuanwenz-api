@@ -1,0 +1,70 @@
+<!-- pages/tools/tools.wxml -->
+<view class="container">
+  <!-- 工具列表 -->
+  <view class="tools-list">
+    <!-- 视频去水印 -->
+    <view class="tool-item" bindtap="handleVideoWatermark">
+      <view class="tool-icon">💧</view>
+      <view class="tool-info">
+        <text class="tool-name">视频去水印</text>
+        <text class="tool-desc">支持抖音/快手等平台视频去水印下载</text>
+      </view>
+      <view class="tool-status">
+        <text class="remain-count">今日剩余：{{watermarkCount}}次</text>
+      </view>
+    </view>
+
+    <!-- 语音转文字 -->
+    <view class="tool-item" bindtap="handleVoiceToText">
+      <view class="tool-icon">🎤</view>
+      <view class="tool-info">
+        <text class="tool-name">语音转文字</text>
+        <text class="tool-desc">支持录音实时转文字，快速记录</text>
+      </view>
+      <view class="tool-status">
+        <text class="remain-count">今日剩余：{{voiceCount}}次</text>
+      </view>
+    </view>
+
+    <!-- 文字翻译 -->
+    <view class="tool-item" bindtap="handleTranslate">
+      <view class="tool-icon">🌐</view>
+      <view class="tool-info">
+        <text class="tool-name">文字翻译</text>
+        <text class="tool-desc">支持多语言互译，快速翻译</text>
+      </view>
+      <view class="tool-status">
+        <text class="remain-count">今日剩余：{{translateCount}}次</text>
+      </view>
+    </view>
+
+    <!-- 更多工具 -->
+    <view class="tool-item coming-soon">
+      <view class="tool-icon">✨</view>
+      <view class="tool-info">
+        <text class="tool-name">更多工具</text>
+        <text class="tool-desc">更多实用工具正在开发中...</text>
+      </view>
+      <view class="tool-status">
+        <text class="status-tag">敬请期待</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 广告区域 -->
+  <view class="ad-container">
+    <ad unit-id="adunit-id" ad-type="banner"></ad>
+  </view>
+
+  <!-- 获取更多次数提示 -->
+  <view class="bottom-tips">
+    <text class="tip-text">观看广告可获得更多使用次数</text>
+    <button 
+      class="watch-ad-btn" 
+      bindtap="watchAd"
+      disabled="{{!adLoaded}}"
+    >
+      观看广告
+    </button>
+  </view>
+</view>
