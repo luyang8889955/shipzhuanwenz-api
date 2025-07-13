@@ -11,9 +11,5 @@
       "src": "/api/(.*)",
       "dest": "/api/$1"
     }
-  ],
-  "env": {
-    "WX_APPID": "@wx-appid",
-    "WX_SECRET": "@wx-secret"
-  }
+  ]
 } 
